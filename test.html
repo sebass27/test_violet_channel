@@ -10,11 +10,11 @@
 
     <div id="violet-cart"></div>
 
-    <!-- <button onclick="showCart('b8450c9f609e438e9fdec47a6d214ecf')">Shoes</button>
+    <button onclick="showCart('b8450c9f609e438e9fdec47a6d214ecf')">Shoes</button>
     <button onclick="showCart('d89a13e6fd1a4e529a2889fc554b6354')">Jacket</button>
     <button onclick="showCart('276fa9b13bee400a9bc7a6e838803600')">Flat</button>
     <button onclick="showCart('b3789fb3482c4b27b2b2c3831e83118d')">Coat</button>
-    <button onclick="showCart('234ebc9c9ae34d8cad33f6d882695c1d')">Boot</button> -->
+    <button onclick="showCart('234ebc9c9ae34d8cad33f6d882695c1d')">Boot</button>
     <script>
         pids = ['b8450c9f609e438e9fdec47a6d214ecf', 'd89a13e6fd1a4e529a2889fc554b6354', '276fa9b13bee400a9bc7a6e838803600', 'b3789fb3482c4b27b2b2c3831e83118d', '234ebc9c9ae34d8cad33f6d882695c1d']
         
@@ -30,40 +30,40 @@
         let productId = '';
 
         var body = jQuery("body");
-        pids.forEach(pid => {
+        // pids.forEach(pid => {
 
-            violet.getProduct(pid).then(function(product){
-                var productObj = JSON.parse(product);
-                //console.log(productObj);
-                var div = jQuery("<div>");
-                var button = jQuery("<button>");
-                button.text("Buy Now!");
+        //     violet.getProduct(pid).then(function(product){
+        //         var productObj = JSON.parse(product);
+        //         //console.log(productObj);
+        //         var div = jQuery("<div>");
+        //         var button = jQuery("<button>");
+        //         button.text("Buy Now!");
 
-                productObj["name"]
-                button.click(function(){
-                    showCart(pid);
-                })
+        //         productObj["name"]
+        //         button.click(function(){
+        //             showCart(pid);
+        //         })
                 
-                var img = jQuery("<img>");
-                img.attr("src", productObj["default_image_url"]);
-                img.css({"width": 100/*, "height": 100*/});
-                var name = jQuery("<p>");
-                name.text(productObj["name"]);
+        //         var img = jQuery("<img>");
+        //         img.attr("src", productObj["default_image_url"]);
+        //         img.css({"width": 100/*, "height": 100*/});
+        //         var name = jQuery("<p>");
+        //         name.text(productObj["name"]);
 
-                var description = jQuery("<p>");
-                description.text(productObj["description"]);
+        //         var description = jQuery("<p>");
+        //         description.text(productObj["description"]);
 
-                div.append(img);
-                div.append(name);
-                div.append(description);
-                div.append(button);
+        //         div.append(img);
+        //         div.append(name);
+        //         div.append(description);
+        //         div.append(button);
 
-                body.append(div);
-            }).catch(function(err){
-                console.error(err);
-            });
+        //         body.append(div);
+        //     }).catch(function(err){
+        //         console.error(err);
+        //     });
             
-        });
+        // });
         
 
         function showCart(pid){
